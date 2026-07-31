@@ -96,7 +96,7 @@ steps:
 
 #### Using with action-text-variables for file updates
 
-Markdown templates can also be used with [skills/action-text-variables](https://github.com/skills/action-text-variables) to generate dynamic content for any purpose, e.g updating a file.
+Markdown templates can also be used with [skills/action-text-variables](https://github.com/Sombrerita/action-text-variables) to generate dynamic content for any purpose, e.g updating a file.
 
 ```yaml
 steps:
@@ -127,6 +127,7 @@ steps:
 
 These GitHub Actions are particularly useful when creating GitHub Skills Exercises:
 
-- **[skills/action-text-variables](https://github.com/skills/action-text-variables)**: Replace variables in template files with dynamic content
-- **[skills/action-keyphrase-checker](https://github.com/skills/action-keyphrase-checker)**: Verify if specific keyphrases exist in files or content
+- **[skills/action-text-variables](https://github.com/Sombrerita/action-text-variables)**: Replace variables in template files with dynamic content
+- **[skills/action-keyphrase-checker](https://github.com/Sombrerita/action-keyphrase-checker)**: Verify if specific keyphrases exist in files or content
 - **[GrantBirki/comment](https://github.com/GrantBirki/comment)**: Create comments on GitHub issues or pull requests with support for Nunjucks templating
+
