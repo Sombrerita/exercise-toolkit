@@ -32,12 +32,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: Sombrerita/checkout@v6
         with:
           ref: ${{ github.event.repository.default_branch }}
 
       - name: Get response templates
-        uses: actions/checkout@v6
+        uses: Sombrerita/checkout@v6
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
@@ -45,7 +45,7 @@ jobs:
 
       - name: Build congratulations message from template
         id: build-new-readme
-        uses: skills/action-text-variables@v4
+        uses: Sombrerita/action-text-variables@v4
         with:
           template-file: exercise-toolkit/markdown-templates/readme/exercise-finished.md
           template-vars: |
@@ -60,7 +60,7 @@ jobs:
         run: echo "$README_TEXT" > README.md
 
       - name: Update README - congratulations
-        uses: EndBug/add-and-commit@v10
+        uses: Sombrerita/add-and-commit@v10
         with:
           add: "README.md"
           message: "Congratulations!🎉"
@@ -72,7 +72,7 @@ jobs:
 
     steps:
       - name: Get response templates
-        uses: actions/checkout@v6
+        uses: Sombrerita/checkout@v6
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
@@ -80,7 +80,7 @@ jobs:
 
       - name: Build message - exercise finished
         id: build-finish-message
-        uses: skills/action-text-variables@v4
+        uses: Sombrerita/action-text-variables@v4
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/exercise-finished.md
           template-vars: |
@@ -98,3 +98,4 @@ jobs:
         run: gh issue close "${{ inputs.issue-url }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

@@ -16,7 +16,7 @@ jobs:
     name: Test Nonexistent Workflow Fails
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: Sombrerita/checkout@v6
 
       - name: Test with non-existent workflow
         id: nonexistent
@@ -41,7 +41,7 @@ jobs:
     name: Test Current Workflow Status Handling
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: Sombrerita/checkout@v6
 
       - name: Test current workflow reaches in_progress
         uses: ./actions/wait-for-workflow
@@ -72,3 +72,4 @@ jobs:
           echo "outcome=${{ steps.completed-timeout.outcome }}"
           echo "conclusion=${{ steps.completed-timeout.outputs.conclusion }}"
           exit 1
+

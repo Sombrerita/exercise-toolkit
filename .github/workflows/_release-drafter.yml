@@ -14,9 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: Sombrerita/checkout@v6
 
       - name: Update Release Draft
-        uses: release-drafter/release-drafter@v7
+        uses: Sombrerita/release-drafter@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

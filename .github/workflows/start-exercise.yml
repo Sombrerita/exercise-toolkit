@@ -62,10 +62,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: Sombrerita/checkout@v6
 
       - name: Get response templates
-        uses: actions/checkout@v6
+        uses: Sombrerita/checkout@v6
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
@@ -73,7 +73,7 @@ jobs:
 
       - name: Get template repository
         id: get-template-repo
-        uses: actions/github-script@v9
+        uses: Sombrerita/github-script@v9
         with:
           script: |
             const { data: repo } = await github.rest.repos.get({
@@ -92,7 +92,7 @@ jobs:
             }
 
       - name: Find and replace image URLs in step files
-        uses: actions/github-script@v9
+        uses: Sombrerita/github-script@v9
         env:
           STEP_FILES_GLOB: .github/steps/*.md
         with:
@@ -118,7 +118,7 @@ jobs:
       
       - name: Build welcome message from template
         id: build-issue-description
-        uses: skills/action-text-variables@v4
+        uses: Sombrerita/action-text-variables@v4
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/welcome.md
           template-vars: |
@@ -129,7 +129,7 @@ jobs:
 
       - name: Create issue - add welcome message
         id: create-issue
-        uses: actions/github-script@v9
+        uses: Sombrerita/github-script@v9
         with:
           script: |
             const { data: issue } = await github.rest.issues.create({
@@ -148,7 +148,7 @@ jobs:
       
       - name: Build welcome message from template
         id: build-new-readme
-        uses: skills/action-text-variables@v4
+        uses: Sombrerita/action-text-variables@v4
         with:
           template-file: exercise-toolkit/markdown-templates/readme/exercise-started.md
           template-vars: |
@@ -162,8 +162,9 @@ jobs:
         run: echo "$README_TEXT" > README.md
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v10
+        uses: Sombrerita/add-and-commit@v10
         with:
           add: "README.md .github/steps/*.md"
           message: "Start exercise"
           default_author: github_actions
+

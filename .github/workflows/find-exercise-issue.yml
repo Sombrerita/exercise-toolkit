@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - id: find-exercise-issue
-        uses: actions/github-script@v9
+        uses: Sombrerita/github-script@v9
         env:
           ISSUE_TITLE_PREFIX: ${{ inputs.issue-title-text }}
         with:
@@ -63,3 +63,4 @@ jobs:
 
             core.setOutput('ISSUE_URL', issue.html_url);
             core.setOutput('ISSUE_NUMBER', issue.number);
+
