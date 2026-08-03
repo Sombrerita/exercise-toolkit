@@ -9,7 +9,7 @@ A collection of templates for use in Skills exercises.
 
 ## Template Variables
 
-Several templates contain [Nunjucks](https://mozilla.github.io/nunjucks/) style variable templating. They are intended for use with the [skills/action-text-variables](https://github.com/skills/action-text-variables) or [GrantBirki/comment](https://github.com/GrantBirki/comment) GitHub Actions, both of which support full Nunjucks templating.
+Several templates contain [Nunjucks](https://mozilla.github.io/nunjucks/) style variable templating. They are intended for use with the [skills/action-text-variables](https://github.com/Sombrerita/action-text-variables) or [GrantBirki/comment](https://github.com/GrantBirki/comment) GitHub Actions, both of which support full Nunjucks templating.
 
 
 
@@ -36,3 +36,4 @@ login: "${{ github.actor }}"
 
 > [!TIP]
 > See [Nunjucks templating documentation](https://mozilla.github.io/nunjucks/templating.html) for all capabilities like iteration, conditionals, and more.
+
